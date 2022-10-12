@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './Layouts/Main/Main.js';
@@ -16,6 +15,9 @@ function App() {
       children: [
         {
           path: '/',
+          loader: () => {
+            return fetch(``)
+          },
           element: <Home></Home>
         },
         {

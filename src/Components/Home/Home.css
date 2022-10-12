@@ -1,4 +1,16 @@
-.heroImg{
-    padding: 40px;
-    margin: 20px;
+.header-section{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    
 }
+.header-section h1{
+    color: rgb(2, 2, 65);
+    font-weight: bolder;
+    margin-top: 8%;
+
+}
+
