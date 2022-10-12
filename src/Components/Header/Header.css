@@ -1,0 +1,17 @@
+.header{
+    background-color: rgb(2, 2, 65);
+    font-weight: 500;
+    padding: 30px;
+    color: white;
+}
+.header a{
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+    padding: 5px;
+}
+.header a:hover{
+    color: rgb(160, 218, 243);
+    border: 2px solid rgb(160, 218, 243);
+    border-radius: 10px;
+}
