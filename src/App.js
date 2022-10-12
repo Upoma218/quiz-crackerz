@@ -5,6 +5,8 @@ import Home from './Components/Home/Home';
 import Topics from './Components/Topics/Topics';
 import Statistics from './Components/Statistics/Statistics';
 import Blogs from './Components/Blogs/Blogs';
+import ErrorPage from './Components/ErrorPage/ErrorPage';
+import Quizes from './Components/Quizes/Quizes';
 
 
 function App() {
@@ -32,10 +34,22 @@ function App() {
           path: '/blogs',
           element: <Blogs></Blogs>
         },
+        {
+          path: '/quiz/:quizId',
+          loader:async({params}) =>{
+            return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizId}`)
+          },
+          element: <Quizes></Quizes>
+        }
 
       ],
       
+    },
+    {
+      path:'*',
+      element:<ErrorPage></ErrorPage>
     }
+
   ])
      
   return (

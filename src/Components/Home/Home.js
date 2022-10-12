@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Image, Row } from 'react-bootstrap';
+import {  Col, Container, Image, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import Carts from '../Carts/Carts';
 import logo from './heroImage.jpg'
@@ -7,7 +7,7 @@ import './Home.css'
 
 
 const Home = () => {
-    const logos = useLoaderData([]);
+    const logos = useLoaderData();
     const carts = logos.data;
     return (
         <div>
@@ -20,13 +20,13 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
-            <Container className='cart-section'>
-                <Row>
-                    <Col xs={12} md={6}>
+            <Container className='p-6'>
+                <Row xs={1} md={2} lg={4} className="g-4 ">
+                    
                         {
                             carts.map(cart => <Carts key={cart.id} cart={cart}></Carts>)
                         }
-                    </Col>
+                    
                 </Row>
             </Container>
         </div>

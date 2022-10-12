@@ -1,18 +1,25 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Button, Card, Col } from 'react-bootstrap';
+import './carts.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 
 const Carts = ({ cart }) => {
-    console.log(cart);
-    const {logo, name, total } = cart;
-    console.log(name)
+    
+    const {id, logo, name, total } = cart;
+    
     return (
-        <Card>
-            <Card.Img variant="top" src={logo} />
+        <Col>
+        <Card className='cart'>
+            <Card.Img variant="top bg-secondary" src={logo} />
             <Card.Body>
-                <Card.Title>{name}</Card.Title>
-                <h3>Total Quiz: {total}</h3>
+                <Card.Title className='text-info' ><h1>{name}</h1></Card.Title>
+                <h2 className='text-success'>Total Quiz: {total}</h2>
+                <Link to={`quiz/${id}`}><Button className='bg-secondary'>Start Practice<FontAwesomeIcon className='ms-2' icon={faArrowRight} /> </Button></Link>
             </Card.Body>
         </Card>
+        </Col>
     );
 };
 
