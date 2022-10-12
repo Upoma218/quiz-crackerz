@@ -1,19 +1,23 @@
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Main from './Layouts/Main/Main.js';
 import Home from './Components/Home/Home';
 import Topics from './Components/Topics/Topics';
-import Statistics from './Components/Statistics/Statistics';
 import Blogs from './Components/Blogs/Blogs';
-import ErrorPage from './Components/ErrorPage/ErrorPage';
-import Quizes from './Components/Quizes/Quizes';
+import ErrorPage from './ErrorPage/ErrorPage';
+import Main from './layout/Main';
+import Quizzes from './Components/Quizes/Quizzes';
+import Quiz from './Components/Quiz/Quiz';
+import Statistics from './Components/Statistics/Statistics';
+
+<layout></layout>;
+
 
 
 function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Main></Main>,
+      element:<Main></Main>,
       children: [
         {
           path: '/',
@@ -23,8 +27,8 @@ function App() {
           element: <Home></Home>
         },
         {
-          path: '/topics',
-          element: <Topics></Topics>
+          path:'/quiz',
+          element: <Quizzes></Quizzes>
         },
         {
           path: '/statistics',
@@ -39,7 +43,7 @@ function App() {
           loader:async({params}) =>{
             return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizId}`)
           },
-          element: <Quizes></Quizes>
+          element: <Quizzes></Quizzes>
         }
 
       ],

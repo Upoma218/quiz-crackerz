@@ -6,8 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Quiz = ({questionData}) => {
-    console.log(questionData)
-    const {correctAnswer,id, options,question} = questionData;
+    const {correctAnswer,options,question} = questionData;
     const showAnswer = () => {toast(correctAnswer)}
     return (
         <div className=' quiz p-4 m-6 border border-2 rounded'>

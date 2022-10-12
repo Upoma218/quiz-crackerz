@@ -3,10 +3,10 @@ import { useLoaderData } from 'react-router-dom';
 import Quiz from '../Quiz/Quiz';
 
 
-const Quizes = () => {
+const Quizzes = () => {
     const quiz = useLoaderData();
-    const quizes = quiz.data;
-    const {name, questions} = quizes;
+    const quizzes = quiz.data;
+    const {name, questions} = quizzes;
     
     
     return (
@@ -21,4 +21,4 @@ const Quizes = () => {
     );
 };
 
-export default Quizes;
+export default Quizzes;
