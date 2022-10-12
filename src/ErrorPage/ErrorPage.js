@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'react-bootstrap';
-import logo from './errorPage.jfif'
+import logo from './errorPage.jpg'
 
 const ErrorPage = () => {
     return (

@@ -1,16 +1,18 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 
-const Statistics = ({cart}) => {
-     const {total} = cart;
+const Statistics = () => {
+    const data = useLoaderData();
+    const questions = data.data.question;
     return (
         <div>
             <h1 className='p-6 text-success font-bold m-5'>This is Chart</h1>
             <div>
-                <LineChart width={600} height={300} data={cart} margin={{ top: 20, right: 20, bottom: 5, left: 0 }}>
-                    <Line type="monotone" dataKey="uv" stroke="#03010e" />
-                    <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-                    <XAxis dataKey="name" />
+                <LineChart width={600} height={300} data={data}>
+                    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+                    <CartesianGrid stroke="#ccc" />
+                    <XAxis dataKey={questions} />
                     <YAxis />
                 </LineChart>
             </div>
