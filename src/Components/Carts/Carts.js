@@ -1,10 +1,18 @@
 import React from 'react';
+import { Card } from 'react-bootstrap';
 
-const Carts = () => {
+const Carts = ({ cart }) => {
+    console.log(cart);
+    const {logo, name, total } = cart;
+    console.log(name)
     return (
-        <div>
-            <h1>this are carts</h1>
-        </div>
+        <Card>
+            <Card.Img variant="top" src={logo} />
+            <Card.Body>
+                <Card.Title>{name}</Card.Title>
+                <h3>Total Quiz: {total}</h3>
+            </Card.Body>
+        </Card>
     );
 };
 
