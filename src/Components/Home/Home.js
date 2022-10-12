@@ -2,6 +2,7 @@ import React from 'react';
 import {  Col, Container, Image, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import Carts from '../Carts/Carts';
+import Statistics from '../Statistics/Statistics';
 import logo from './heroImage.jpg'
 import './Home.css'
 
@@ -29,6 +30,7 @@ const Home = () => {
                     
                 </Row>
             </Container>
+            
         </div>
     );
 };
